@@ -23,9 +23,12 @@ const dataPt = agora.toLocaleDateString('pt-BR', {
         hour: '2-digit',
         minute: '2-digit',
         //second: '2-digit'
+
     });
 
-    setTimeout((function) {
+    timePagina.textContent = "Atualizado em: " + dataPt;
+
+    setTimeout(function() {
        tempPagina.textContent = "__" 
        umidadePagina.textContent = "__"
     }, 2000);

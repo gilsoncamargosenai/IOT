@@ -5,12 +5,14 @@ clienteWeb = new Paho.MQTT.Client('broker.hivemq.com', 8884, clientId);
 
 // Obtem acesso ao elemento do HTML
 const tempPagina = document.getElementById("temperatura")
+const umidadePagina = document.getElementById("umidade")    
 
 clienteWeb.onMessageArrived = function(message) {
     const payload = message.payloadString;
     const dados = JSON.parse(payload)
 
     tempPagina.textContent = String(dados.temperatura) + " °C"
+    umidadePagina.textContent = String(dados.umidade) + " %"
 }
 
 clienteWeb.connect({   

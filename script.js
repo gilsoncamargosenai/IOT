@@ -13,6 +13,11 @@ clienteWeb.onMessageArrived = function(message) {
 
     tempPagina.textContent = String(dados.temperatura) + " °C"
     umidadePagina.textContent = String(dados.umidade) + " %"
+
+    setTimeout((function) {
+       tempPagina.textContent = "__" 
+       umidadePagina.textContent = "__"
+    }, 2000);
 }
 
 clienteWeb.connect({   
